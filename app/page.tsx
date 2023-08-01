@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 import { cookies } from "next/headers";
-import background_img from 'public/background.jpg';
+import background_img from "public/background.jpg";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import {
   ArrowPathIcon,
@@ -11,10 +11,10 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   ServerIcon,
-} from '@heroicons/react/20/solid';
+} from "@heroicons/react/20/solid";
 import { Database } from "@/lib/database.types";
-import Header from '@/app/header';
-import GitHubIcon from '@/app/logos/github';
+import Header from "@/app/header";
+import GitHubIcon from "@/app/logos/github";
 
 export default async function Example() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -41,9 +41,10 @@ export default async function Example() {
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                 <a href="https://github.com/private-attribution/">
                   <div className="relative rounded-full px-3 py-1 text-md text-white font-semibold leading-6 atext-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-                  Check out all things IPA on {' '}
+                    Check out all things IPA on{" "}
                     <span className="absolute inset-0" aria-hidden="true" />
-                    Github <GitHubIcon className="flex h-4 w-auto fill-white pr-1 align-[-1px]"/>
+                    Github{" "}
+                    <GitHubIcon className="flex h-4 w-auto fill-white pr-1 align-[-1px]" />
                     <span aria-hidden="true">&rarr;</span>
                   </div>
                 </a>
@@ -54,22 +55,21 @@ export default async function Example() {
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                   IPA coodinator helps report collectors and helper parties
-                  test, deploy, and issue Interoperable Private Attribution queries.
+                  test, deploy, and issue Interoperable Private Attribution
+                  queries.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <div className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
-                    { isLoggedIn ?
-                    <Link href="/dashboard">
-                      Dashboard
-                    </Link>
-                      :
-                    <Link href="/login">
-                      Log in
-                    </Link>
-
-                    }
+                    {isLoggedIn ? (
+                      <Link href="/dashboard">Dashboard</Link>
+                    ) : (
+                      <Link href="/login">Log in</Link>
+                    )}
                   </div>
-                  <a href="#" className="text-sm font-semibold leading-6 text-white">
+                  <a
+                    href="#"
+                    className="text-sm font-semibold leading-6 text-white"
+                  >
                     View docs <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -79,5 +79,5 @@ export default async function Example() {
         </div>
       </main>
     </div>
-  )
+  );
 }

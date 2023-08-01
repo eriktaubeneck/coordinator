@@ -3,8 +3,8 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import type { Database } from '@/lib/database.types';
-import GitHubOAuthComponent from '@/app/login/GitHubOAuthComponent';
+import type { Database } from "@/lib/database.types";
+import GitHubOAuthComponent from "@/app/login/GitHubOAuthComponent";
 
 export default async function LoginPage() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -34,7 +34,7 @@ export default async function LoginPage() {
               <GitHubOAuthComponent />
             </div>
           </div>
-  </div>
+        </div>
       </div>
     </>
   );
