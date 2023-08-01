@@ -1,10 +1,11 @@
 "use client";
 
 import GitHubIcon from "@/app/logos/github";
+import { Database } from "@/lib/database.types";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function GitHubOAuthComponent() {
-  const supabase = createClientComponentClient();
+  const supabase = createClientComponentClient<Database>({});
 
   const handleGitHubLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
